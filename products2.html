@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+<style>
+.product {
+width: 400px;
+margin: 10px;
+padding: 10px;
+border: 2px solid #000000;
+}
+
+.product h3 {
+margin: 0;
+}
+</style>
+</head>
+<body>
+
+<input type="button" id="loadBtn" value="Show Products">
+
+<div id="result"></div>
+
+<script>
+// runs when the page loads
+function page() {
+  document.getElementById("loadBtn").onclick = loadProducts;
+}
+
+//reads products.json and shows each product in a div
+function loadProducts() {
+  var request = new XMLHttpRequest();
+  request.open("GET", "products.json", true);
+  
+  request.onreadystatechange = function() {
+    if (request.readyState == 4 && request.status == 200) {
+      var products = JSON.parse(request.responseText);
+
+      var output = "";
+      for (let i = 0; i < products.length; i++) {
+        output += "<div class='product'>";
+        output += "<h3>" + products[i].name + "</h3>";
+        output += "<p>" + products[i].description + "</p>";
+        output += "<p>Price: $" + products[i].price + "</p>";
+        output += "<p>Categories: " + products[i].categories.join(", ") + "</p>";
+        output += "</div>";
+      }
+
+      // put it on the page
+      document.getElementById("result").innerHTML = output;
+    }
+  }
+  request.send();
+}
+
+window.onload = page;
+</script>
+
+</body>
+</html>

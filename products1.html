@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products</title>
+</head>
+<body>
+
+<script>
+// list of 10 products
+var products = [
+  {
+    "name": "T-shirt",
+    "description": "Blue and Green Tie-dye T-shirt",
+    "price": 20,
+    "categories": ["clothing", "vintage"]
+  },
+  {
+    "name": "Leather Jacket",
+    "description": "Black leather jacket 1980s style",
+    "price": 120,
+    "categories": ["clothing", "vintage"]
+  },
+  {
+    "name": "Samsung TV",
+    "description": "60-inch Samsung Smart TV 4K OLED Display",
+    "price": 1205,
+    "categories": ["electronics", "entertainment"]
+  },
+  {
+    "name": "Electric Guitar",
+    "description": "Six-string electric guitar with a soundbox and case",
+    "price": 350,
+    "categories": ["electronics", "music"]
+  },
+  {
+    "name": "Playstation 5",
+    "description": "Video game console with 2 wireless controllers",
+    "price": 600,
+    "categories": ["electronics", "gaming"]
+  },
+  {
+    "name": "Winter Jacket",
+    "description": "Dark green winter puffer jacket for extreme cold",
+    "price": 85,
+    "categories": ["clothing", "outdoors"]
+  },
+  {
+    "name": "Backpack",
+    "description": "Waterproof backpack with a laptop sleeve",
+    "price": 55,
+    "categories": ["accessories", "outdoors"]
+  },
+  {
+    "name": "Air Fryer",
+    "description": "Compact air fryer with digital display",
+    "price": 150,
+    "categories": ["kitchen", "appliances"]
+  },
+  {
+    "name": "Beanie",
+    "description": "Warm knit wool beanie for cold weather",
+    "price": 18,
+    "categories": ["clothing", "outdoors"]
+  },
+  {
+    "name": "Digital Camera",
+    "description": "Camera to take digital photos with wide and zoom lenses",
+    "price": 350,
+    "categories": ["electronics", "photography"]
+  }
+];
+
+// turn the JSON into a string and show it on the page
+var productsString = JSON.stringify(products);
+document.write(productsString);
+</script>
+
+</body>
+</html>
