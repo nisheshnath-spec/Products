@@ -55,7 +55,7 @@ function loadCategories() {
       //build a option for each category
       var options = "";
       categories.forEach(function(category) {
-        options += "<option value='" + category + "'>" + category + "</option>";
+        options += "<option value='" + category + "'>" + category +"</option>";
       });
       document.getElementById("categorySelect").innerHTML = options;
     }
@@ -70,7 +70,7 @@ function filterProducts() {
   var output = "";
   for (let i = 0; i < allProducts.length; i++) {
     if (allProducts[i].categories.indexOf(selected) != -1)
-      output += "<p>" + allProducts[i].name + "</p>";
+      output+= "<p>" + allProducts[i].name +"</p>";
   }
 
   document.getElementById("filterResult").innerHTML = output;
@@ -87,7 +87,7 @@ function loadProducts() {
 
       // build the HTML for all the products
       var output = "";
-      for (let i = 0; i < products.length; i++) {
+      for (let i = 0; i< products.length; i++) {
         output += "<div class='product'>";
         output += "<h3>" + products[i].name + "</h3>";
         output += "<p>" + products[i].description + "</p>";
