@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pokemon</title>
+</head>
+<body>
+
+<h1>Pokemon Info</h1>
+<div id="result"></div>
+
+<h2>About This API</h2>
+<p>PokeAPI returns information about Pokemon as JSON. I chose it because it is free, and has cool information about pokemon.</p>
+
+<h2>Where I Found It</h2>
+<p>https://pokeapi.co</p>
+
+<h2>Parameters Used</h2>
+<p>The Pokemon name (charizard) is the only information I had to give the API and it goes just at the end of the API.</p>
+
+<h2>Example Use Case</h2>
+<p>A Pokemon fan site could use it to show a Pokemon's picture and stats for a game their building about Pokemon.</p>
+
+<script>
+function showPokemon() {
+  fetch("https://pokeapi.co/api/v2/pokemon/charizard")
+    .then(function(response) { return response.json(); })
+    .then(function(json) {
+      document.getElementById("result").innerHTML =
+        "<h3>" + json.name + "</h3>" +
+        "<img src='" + json.sprites.front_default + "'>" +
+        "<p>Height: " + json.height + "</p>" +
+        "<p>Weight: " + json.weight + "</p>" +
+        "<p>Type: " + json.types[0].type.name + "</p>";
+    });
+}
+
+window.onload = showPokemon;
+</script>
+
+</body>
+</html>
